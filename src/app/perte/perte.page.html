@@ -1,0 +1,95 @@
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-row>
+        <ion-col size-sm="8" offset-sm="2">
+           <ion-row>
+              <ion-col size="3"  class="logo">
+                <ion-img src="../../assets/logo.png" alt="error" class="ion-img"></ion-img>
+              </ion-col>
+              <ion-col size="8" offset="1"><h4 class="text mt-5">déclarez votre objet perdu</h4></ion-col>
+           </ion-row>
+           <ion-segment (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="client">
+              <ion-label>CLIENT</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="perte">
+              <ion-label>PERTE</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+      <ion-col size-sm="8" offset-sm="2" *ngIf="selectSegment =='client'"> 
+        
+        <form [formGroup]="clientForm" >
+          <ion-item>
+            <ion-label position="floating">Numero de ticket</ion-label>
+            <ion-input type="text" formControlName="NUMERO_TICKET"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Matricule bus</ion-label>
+            <ion-input type="text" formControlName="MATRICULE_BUS"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Prenom</ion-label>
+            <ion-input type="text" formControlName="PRENOM"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input type="text" formControlName="NOM"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Adresse</ion-label>
+            <ion-input type="tex" formControlName="ADRESSE_1"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Autre adresse</ion-label>
+            <ion-input type="text" formControlName="ADRESSE_2"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Tel</ion-label>
+            <ion-input type="text" formControlName="TEL_CLIENT"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Mail</ion-label>
+            <ion-input type="mail" formControlName="EMAIL"></ion-input>
+          </ion-item>
+          <ion-col size="12">
+            <ion-button size="small" (click)="ajoutClient()">Valider</ion-button>
+          </ion-col> 
+        </form>
+      </ion-col>
+
+      <ion-col size-sm="8" offset-sm="2" *ngIf="selectSegment =='perte'"> 
+        
+        <form [formGroup]="objetForm" >
+          <ion-item>
+            <ion-label position="floating">Numero de ticket</ion-label>
+            <ion-input type="text" formControlName="NUMERO_TICKET"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Le type d'objet</ion-label>
+            <ion-input type="text" formControlName="LIBELLE_OBJET"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Les détails de l'objet</ion-label>
+            <ion-input type="text" formControlName="Details"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Date de perte</ion-label>
+            <ion-input type="date" formControlName="DATE_OBJET_PERDU"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Heure de perte</ion-label>
+            <ion-input type="time" formControlName="HEURE"></ion-input>
+          </ion-item>
+          <ion-col size="12">
+            <ion-button size="small" (click)="ajoutPerte()">Valider</ion-button>
+          </ion-col> 
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+</ion-content>

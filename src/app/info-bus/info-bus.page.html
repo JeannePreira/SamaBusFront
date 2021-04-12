@@ -1,0 +1,47 @@
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-row>
+        <ion-col size-sm="8" offset-sm="2">
+           <ion-row>
+              <ion-col size="3"  class="logo">
+                <ion-img src="../../assets/logo.png" alt="error" class="ion-img"></ion-img>
+              </ion-col>
+              <ion-col size="8" offset="1"><h4 class="text mt-5">Infos sur le bus à prendre</h4></ion-col>
+           </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <form [formGroup]="busForm">
+        <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="floating">quartier actuel</ion-label>
+                <ion-input type="text" formControlName="quartier" [(ngModel)]="quartier"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="floating">lieu de destination</ion-label>
+                <ion-input type="text" formControlName="lieu" [(ngModel)]="lieu"></ion-input>
+              </ion-item>
+            </ion-col> 
+          </ion-row>
+          <ion-col size="4" ofsset="4">
+            <ion-button size="small" (click)="getInfos()" [routerLink]="['/data-bus']">Valider</ion-button>
+          </ion-col>
+        </form>
+
+        
+        <ion-col size="6" offset="3">
+          <h3>Bus disponibles sont:</h3>
+          <div *ngFor="let Bus of bus">
+            <p>{{Bus.DENOMINATION_LIGNE}}</p>
+          </div>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+</ion-content>

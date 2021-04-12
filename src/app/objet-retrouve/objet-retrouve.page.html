@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Les objets retrouvées</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <div class="row" *ngFor="let itineraire of itineraires" >
+              <div class="cadre m-4">
+                <h4>Le type d'objet</h4>
+                <p class="card-title">{{itineraire.LIBELLE_OBJET_RETROUVE}}</p>
+                
+                <h4>L'heure</h4>
+                <p class="float-left btn btn-sm btn-outline-danger disableb">{{itineraire.HEURE}}</p>
+                <h4>La date</h4>
+                <p class="btn btn-sm btn-center disableb">{{itineraire.DATE_OBJET_RETROUVE}}</p>  
+              </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

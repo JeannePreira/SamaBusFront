@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Itineraires</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2">
+        <div class="row" *ngFor="let itineraire of itineraires" >
+              <div class="cadre m-4">
+                <h4>Le libelle</h4>
+                <p class="card-title">{{itineraire.libele}}</p>
+                <h4>Départ</h4>
+                <p class="card-text">{{itineraire.debut_intineraire_1}}</p>
+                <h4>Terminus</h4>
+                <p class="float-left btn btn-sm btn-outline-danger disableb">{{itineraire.fin_itineraire_23}}</p>
+                <h4>Parcours</h4>
+                <p class="btn btn-sm btn-center disableb">
+                  {{itineraire.nom_Itineraire_2}} - {{itineraire.nom_Itineraire_3}} - {{itineraire.nom_Itineraire_4}} - {{itineraire.nom_Itineraire_5}}
+                  {{itineraire.nom_Itineraire_6}} - {{itineraire.nom_Itineraire_7}} - {{itineraire.nom_Itineraire_8}} - {{itineraire.nom_Itineraire_9}}</p>  
+              </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
